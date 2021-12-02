@@ -1,3 +1,6 @@
+variables:
+  valor1='teste'
+
 steps:
 - name: 'bash'
   args: ['echo', ${{ variables.valor1 }}]
