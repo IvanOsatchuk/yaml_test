@@ -3,4 +3,4 @@ variables:
 
 steps:
 - name: 'bash'
-  args: ['echo', $valor1]
+  args: ['echo', $variables.valor1]
