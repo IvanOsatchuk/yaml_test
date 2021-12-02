@@ -3,4 +3,4 @@ variables:
 
 steps:
 - name: 'bash'
-  args: ['echo', '${{ variables.valor1 }}']
+  args: ['echo', $valor1]
