@@ -1,3 +1,3 @@
 steps:
 - name: 'bash'
-  args: ['echo', $valor1]
+  args: ['echo', $_VAR1]
