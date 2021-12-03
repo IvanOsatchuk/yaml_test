@@ -18,5 +18,7 @@ steps:
      - |
          echo "Segundo do processo"
          echo $($_ENV)
+         for val in $($_ENV)
+          echo $val
 substitutions:
   _ENV: "cat /workspace/first.txt"
