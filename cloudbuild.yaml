@@ -4,10 +4,10 @@ steps:
     args:
       - "-c"
       - |
-          echo "Inicio do processo"
           OIFS=${IFS}
           IFS="
           "
+          echo "Inicio do processo"
           output=$(grep valor1 vars.yaml)
           valor1=${output#*'valor1='}
           echo $valor1
