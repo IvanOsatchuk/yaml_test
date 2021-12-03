@@ -15,5 +15,5 @@ steps:
       - "-c"
       - |
           echo "Segundo passo"
-          echo ${_VAR1}
+          echo $_VAR1
           
