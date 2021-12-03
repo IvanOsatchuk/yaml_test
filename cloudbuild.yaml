@@ -8,3 +8,6 @@ steps:
           output=$(grep valor1 vars.yaml)
           valor1=${output#*'valor1='}
           echo $valor1
+          $_ENV=$valor1
+  substitutions:
+    _ENV: ''  
