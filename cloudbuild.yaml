@@ -1,19 +1,22 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
+- id: "Store Values"
+    name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: "bash"
     args:
       - "-c"
       - |
-          OIFS=${IFS}
-          IFS="
-          "
           echo "Inicio do processo"
           output=$(grep valor1 vars.yaml)
           valor1=${output#*'valor1='}
-          echo $valor1
-          
-          export $_VAR1=$valor1
-          
-          echo $_VAR1
+          echo $valor1 > /workspace/first.txt
+		  
+- id: "Read Values"
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+          echo "Segundo do processo"
+          echo "First we saved " $(cat /workspace/first.txt)
           
           
