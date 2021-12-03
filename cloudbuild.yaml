@@ -5,12 +5,6 @@ steps:
       - "-c"
       - |
           echo "Inicio do processo"
-          valor1=$(grep valor1 vars.yaml)
-          valor1=${$valor1#*'valor1='}
+          output=$(grep valor1 vars.yaml)
+          valor1=${output#*'valor1='}
           echo $valor1
-          export $valor1
-  
-  
-substitutions:
-  _PRIMEIRA: ''
-  _VAR2: ''
