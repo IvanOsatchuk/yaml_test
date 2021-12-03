@@ -9,7 +9,7 @@ steps:
              output=$(grep valor1 vars.yaml)
              valor1=${output#*'valor1='}
              echo $valor1 > /workspace/first.txt
-		 
+
   - id: "Read Values"
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: "bash"
