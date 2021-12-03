@@ -19,4 +19,4 @@ steps:
          echo "Segundo do processo"
          echo $_ENV
 substitutions:
-  _ENV: "$(cat /workspace/first.txt)"
+  _ENV: "cat /workspace/first.txt"
