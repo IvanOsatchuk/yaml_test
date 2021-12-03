@@ -17,4 +17,5 @@ steps:
      - "-c"
      - |
          echo "Segundo do processo"
-         echo "First we saved " $(cat /workspace/first.txt)
+         _ORIGEM=$(cat /workspace/first.txt)
+         echo $_ORIGEM
