@@ -1,6 +1,7 @@
 steps:
 - name: 'bash'
-  args: ['echo', $_SUB_VALUE]
+args: ['yaml-cat','./vars.yaml']
+  #args: ['echo', $_SUB_VALUE]
   
 substitutions:
     _SUB_VALUE: 'Hello World'
