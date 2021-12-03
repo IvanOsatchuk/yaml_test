@@ -8,7 +8,7 @@ steps:
           valor1=$(grep valor1 vars.yaml)
           valor1=${valor1#*'valor1='}
           echo $valor1
-          $_PRIMEIRA=$valor1
+          $_PRIMEIRA=${valor1}
   
   
 substitutions:
