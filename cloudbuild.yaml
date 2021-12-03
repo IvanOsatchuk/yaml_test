@@ -6,5 +6,7 @@ steps:
       - |
           echo "Inicio do processo"
           valor1=$(grep valor1 vars.yaml)
-          valor1=${valor1#*'valor1'}
+          valor1=${valor1#*'valor1='}
           echo $valor1
+  - name: 'bash'
+    args: ['echo', $_VAR1]
