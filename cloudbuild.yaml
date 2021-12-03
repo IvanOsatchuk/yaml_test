@@ -14,4 +14,4 @@ steps:
       - "-c"
       - |
           echo "Segunda etapa do processo"
-          echo $valor1
+          echo $_VAR1
