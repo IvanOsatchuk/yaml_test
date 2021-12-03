@@ -9,4 +9,11 @@ steps:
           valor1=${output#*'valor1='}
           echo $valor1
           export _VAR1=$valor1
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+          echo "Segundo passo"
+          echo ${_VAR1}
           
