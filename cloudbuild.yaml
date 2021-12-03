@@ -1,6 +1,8 @@
 variables:
-  valor1='teste'
+- name: one
+  value: initialValue 
 
 steps:
-- name: 'bash'
-  args: ['echo', $variables.valor1]
+  - script: |
+      echo ${{ variables.one }} # outputs initialValue
+      echo $(one)
