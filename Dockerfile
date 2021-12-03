@@ -10,6 +10,6 @@ RUN chmod 755 main
 
 ENV PATH=$PATH:/opt/pipeline/
 
-#ENTRYPOINT ["/opt/pipeline/main"]
+ENTRYPOINT ["/opt/pipeline/main"]
 
 
