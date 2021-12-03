@@ -1,7 +1,7 @@
 steps:
  - id: "Py"
    name: 'gcr.io/google-appengine/python'
-   entrypoint: "test.py"
+   entrypoint: "main.py"
  
  - id: "Store Values"
    name: 'gcr.io/cloud-builders/gcloud'
