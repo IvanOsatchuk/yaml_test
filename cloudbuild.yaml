@@ -9,5 +9,6 @@ steps:
           valor1=${output#*'valor1='}
           echo $valor1
           export _VAR1=$valor1
+          echo 'var'
           echo $_VAR1
           
