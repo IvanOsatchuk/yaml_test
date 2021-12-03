@@ -1,7 +1,3 @@
 steps:
 - name: 'bash'
-args: ['yaml-cat','./vars.yaml']
-  #args: ['echo', $_SUB_VALUE]
-  
-substitutions:
-    _SUB_VALUE: 'Hello World'
+  args: ['myscript.bash']
