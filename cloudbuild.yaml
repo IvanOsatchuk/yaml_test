@@ -1,3 +1,4 @@
 steps:
- - id: Executing Data Fusion CICD
+ - name: 'gcr.io/cloud-builders/docker'
+   id: Executing Data Fusion CICD
    entrypoint: 'main'
