@@ -1,3 +1,7 @@
-steps:
-- name: 'bash'
-  args: ['bash','echo','teste']
+step:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+          echo "enter 1 bash command per line"
