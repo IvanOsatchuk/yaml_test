@@ -1,5 +1,4 @@
-FROM ubuntu:16.04
-
+FROM gcr.io/google/ubuntu2004:latest
 MAINTAINER xyz "xyz@gmail.com"
 
 RUN <<EOR
