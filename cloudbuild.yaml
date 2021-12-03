@@ -18,7 +18,7 @@ steps:
      - |
          echo "Segundo do processo"
          echo $($_ENV)
-         echo -n $_ENV | wc -m
+         echo $_ENV | wc -w
          for val in $($_ENV); do
             echo $val
          done
