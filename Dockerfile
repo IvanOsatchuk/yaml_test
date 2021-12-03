@@ -1,3 +1,5 @@
 FROM alpine
-CMD ["echo", "Hello World!"]
+COPY main.py ./main.py
+RUN chmod 755 main
+CMD ["python", "main.py"]
 
