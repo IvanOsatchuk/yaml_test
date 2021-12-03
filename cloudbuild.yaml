@@ -9,13 +9,9 @@ steps:
           valor1=${valor1#*'valor1='}
           echo $valor1
           $_VAR1=$valor1
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: "bash"
-    args:
-      - "-c"
-      - |
-          echo "Segunda etapa do processo"
-          echo $_VAR1
+  - name: 'bash'
+  args: ['echo', $_VAR1]
+  
 substitutions:
   _VAR1: ''
   _VAR1: ''
