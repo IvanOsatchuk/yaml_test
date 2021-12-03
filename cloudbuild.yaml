@@ -9,5 +9,5 @@ steps:
           valor1=${output#*'valor1='}
           echo $valor1
           $_ENV=$valor1
-  substitutions:
-    _ENV: ''  
+substitutions:
+   _ENV: ''  
