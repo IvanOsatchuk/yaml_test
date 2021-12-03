@@ -10,10 +10,4 @@ steps:
           echo $valor1
           export _VAR1=${output#*'valor1='}
           echo $_VAR1
-  - name: 'bash'
-    args:
-      - "-c"
-      - |
-          echo "Segundo passo"
-          echo $_VAR1
           
