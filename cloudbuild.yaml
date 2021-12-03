@@ -1,4 +1,4 @@
 steps:
- - name: 'gcr.io/cloud-builders/docker'
-   id: Executing Data Fusion CICD
-   entrypoint: 'main'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/myimage', '.']
+images: ['gcr.io/$PROJECT_ID/myimage']
