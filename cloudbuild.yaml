@@ -17,5 +17,4 @@ steps:
      - "-c"
      - |
          echo "Segundo do processo"
-         ORIGEM=$(cat /workspace/first.txt)
-         echo $ORIGEM
+         echo "cloud functions deploy "$(cat /workspace/first.txt)
