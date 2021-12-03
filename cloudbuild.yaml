@@ -1,8 +1,4 @@
-variables:
-- name: one
-  value: initialValue 
-
 steps:
   - script: |
-      echo ${{ variables.one }} # outputs initialValue
-      echo $(one)
+      echo ${{ valor1 }} # outputs initialValue
+      echo $(valor1)
