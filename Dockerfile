@@ -1,20 +1,12 @@
-FROM gcr.io/google/ubuntu2004:latest
-MAINTAINER xyz "xyz@gmail.com"
+FROM gcr.io/google.com/cloudsdktool/cloud-sdk
 
-RUN <<EOR
-    apt-get update 
-    apt-get install -y software-properties-common vim 
-    add-apt-repository ppa:jonathonf/python-3.6 
-    apt-get update -y 
-    apt-get install -y build-essential python3.6 python3.6-dev python3-pip python3.6-venv 
-    pip3 install --upgrade pip
-    EOR
+WORKDIR /opt/pipeline/
 
 
-WORKDIR /app
+RUN pip3 install --upgrade pip && pip3 install --no-cache-dir -r
+COPY main.py ./main
+RUN chmod 755 main
 
-COPY . /app
+ENV PATH=$PATH:/opt/pipeline/
 
-ENTRYPOINT [ "python3" ]
-
-CMD [ "main.py" ]
+ENTRYPOINT ["/opt/pipeline/main"]
