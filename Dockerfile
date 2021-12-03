@@ -1,10 +1,19 @@
-FROM gcr.io/google.com/cloudsdktool/cloud-sdk
+FROM ubuntu:16.04
 
-WORKDIR /opt/pipeline/
+MAINTAINER xyz "xyz@gmail.com"
 
-RUN pip3 install --upgrade pip && pip3 install --no-cache-dir -r 
+RUN apt-get update 
+    && apt-get install -y software-properties-common vim 
+    && add-apt-repository ppa:jonathonf/python-3.6 
+    && apt-get update -y 
+    && apt-get install -y build-essential python3.6 python3.6-dev python3-pip python3.6-venv 
+    && pip3 install --upgrade pip
 
-COPY ./main.py ./main
-RUN chmod 755 cdf-pipeline
 
-ENTRYPOINT ["/opt/pipeline/main"]
+WORKDIR /app
+
+COPY . /app
+
+ENTRYPOINT [ "python3" ]
+
+CMD [ "main.py" ]
