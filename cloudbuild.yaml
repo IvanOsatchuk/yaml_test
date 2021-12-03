@@ -17,4 +17,6 @@ steps:
      - "-c"
      - |
          echo "Segundo do processo"
-         echo "cloud functions deploy "$(cat /workspace/first.txt)
+         echo $_ENV
+ substitutions:
+  _ENV: $(cat /workspace/first.txt)
