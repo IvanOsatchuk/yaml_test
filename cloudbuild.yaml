@@ -1,6 +1,6 @@
 steps:
 - name: 'bash'
-  args: ['echo', $(_SUB_VALUE)]
+  args: ['echo', $_SUB_VALUE]
   
 substitutions:
     _SUB_VALUE: 'Hello World'
