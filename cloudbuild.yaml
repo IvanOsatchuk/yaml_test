@@ -10,7 +10,7 @@ steps:
           echo $valor1
           $_VAR1=$valor1
   - name: 'bash'
-    args: ['echo', ${_VAR1}]
+    args: ['echo', '${_VAR1}']
   
 substitutions:
   _VAR1: ''
