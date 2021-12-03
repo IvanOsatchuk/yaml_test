@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/ivan_test:latest', '.' ]
-- name: 'gcr.io/$PROJECT_ID/ivan_test:latest'
-  entrypoint: 'main'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['run',  'gcr.io/$PROJECT_ID/ivan_test:latest']
 images: [gcr.io/$PROJECT_ID/ivan_test:latest]
