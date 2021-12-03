@@ -1,4 +1,10 @@
 FROM alpine
-COPY main.py ./main.py
+
+WORKDIR /app
+
+COPY . ./app
+
+ENV PATH=$PATH:/app
+
 CMD ["python", "main.py"]
 
