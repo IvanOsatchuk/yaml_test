@@ -9,4 +9,4 @@ steps:
           valor1=${valor1#*'valor1='}
           echo $valor1
   - name: 'bash'
-    args: ['echo', $_VAR1]
+    args: ['echo', $valor1]
