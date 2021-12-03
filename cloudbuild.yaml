@@ -1,4 +1,3 @@
 steps:
- - name: 'Run Python'
-   id: Executing Data Fusion CICD
+ - id: Executing Data Fusion CICD
    entrypoint: 'main'
