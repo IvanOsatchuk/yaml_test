@@ -2,4 +2,4 @@ steps:
 - name: 'python'
   args: ['pip3','install', '-r', 'requirements.txt', '--user']
 - name: 'python'
-  args: ['python3','aux/main.py','--env=dev']
+  args: ['python3','main.py','--env=dev']
