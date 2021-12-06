@@ -1,7 +1,5 @@
 import subprocess
 import shlex
-import requests
-import yaml
 import json
 import os
 
