@@ -1,3 +1,2 @@
-func_labs_migration_pipeline(env):
-  
+def func_labs_migration_pipeline(env):
   print(env)
