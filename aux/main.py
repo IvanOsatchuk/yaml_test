@@ -1,5 +1,6 @@
 import sys
 import argparse
+import pipeline
 
 def config_parse():
     print("Start Data Fusion CICD")
