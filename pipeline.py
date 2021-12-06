@@ -7,7 +7,7 @@ import os
 def func_labs_migration_pipeline(env):
     
     process = subprocess.run(
-        shlex.split("""gsutil mb gs://teste_123"""), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        shlex.split("""gcloud auth print-access-token"""), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
    
     print(process)
