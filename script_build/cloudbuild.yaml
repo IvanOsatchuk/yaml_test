@@ -1,7 +1,7 @@
 steps:
 - id: Build Repo Image
   name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/rapid-strength-333817/rapid-strength-333817/function_cicd/migration_labs:dev', '.']
+  args: ['build', '-t', 'gcr.io/rapid-strength-333817/function_cicd/migration_labs:dev', '.']
 images:
-  - 'gcr.io/rapid-strength-333817/rapid-strength-333817/function_cicd/migration_labs:dev'
+  - 'gcr.io/rapid-strength-333817/function_cicd/migration_labs:dev'
 timeout: 7200s
