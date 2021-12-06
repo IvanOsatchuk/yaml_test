@@ -1,7 +1,0 @@
-steps:
-- id: Build Docker Image
-  name: gcr.io/kaniko-project/executor:latest
-  args:
-    - --destination=gcr.io/rapid-strength-333817/$REPO_NAME-dev
-    - --context=dir:///workspace/
-    - --cache=true
