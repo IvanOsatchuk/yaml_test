@@ -20,7 +20,7 @@ def config_dataops_parse(subparsers):
 
 
 def dataops_func(args):
-    cdf_project = args.cdf_project
+    env = args.env
     pipeline.func_labs_migration_pipeline(
         env
     )
