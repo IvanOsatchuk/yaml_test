@@ -7,6 +7,5 @@ steps:
   entrypoint: migration-pipeline
   args:
    - --env=dev
-   - dataops
 
 
