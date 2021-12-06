@@ -4,6 +4,8 @@ import shlex
 
 def func_labs_migration_pipeline(env):
   
+  print('entrou')
+  
   instance_output = subprocess.run(
         shlex.split("gcloud projects describe rapid-strength-333817"),
         check=True,
