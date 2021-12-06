@@ -1,12 +1,12 @@
 steps:
 - id: Build Repo Image
   name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/drapid-strength-333817/data-migration-labs-cicd/migration-pipeline', '.']
-- name: gcr.io/drapid-strength-333817/data-migration-labs-cicd/migration-pipeline
+  args: ['build', '-t', 'us-docker.pkg.dev/rapid-strength-333817/gcr.io/drapid-strength-333817/data-migration-labs-cicd/migration-pipeline', '.']
+- name: us-docker.pkg.dev/rapid-strength-333817/gcr.io/drapid-strength-333817/data-migration-labs-cicd/migration-pipeline
   id: Exec Migration
   entrypoint: migration-pipeline
   args:
    - --env=dev
    - dataops
 images:
-   - gcr.io/drapid-strength-333817/data-migration-labs-cicd/migration-pipeline
+   - us-docker.pkg.dev/rapid-strength-333817/gcr.io/drapid-strength-333817/data-migration-labs-cicd/migration-pipeline
