@@ -11,5 +11,6 @@ COPY executor.py ./executor.py
 COPY pipeline.py ./pipeline.py
 COPY main.py ./dataops-pipeline
 
+ENV PATH=$PATH:/app/
 
 ENTRYPOINT ['/app/dataops-pipeline']
