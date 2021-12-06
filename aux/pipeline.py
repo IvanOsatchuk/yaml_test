@@ -2,7 +2,13 @@ import executor
 
 def func_labs_migration_pipeline(env):
   
-  test = executor.call_term("gcloud projects describe rapid-strength-333817", return_first_line=True)
+  instance_output = subprocess.run(
+        shlex.split("gcloud projects describe rapid-strength-333817"),
+        check=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.STDOUT,
+    )
   
+  print(instance_output)
   
   print(env)
