@@ -9,8 +9,8 @@ ENV PYTHONUNBUFFERED True
 # ENV APP_HOME /app
 # WORKDIR $APP_HOME
 COPY executor.py ./executor.py
-COPY steptasks.py ./steptasks.py
-COPY pipeline.py ./dataops-pipeline
+COPY pipeline.py ./pipeline.py
+COPY main.py ./dataops-pipeline
 
 # Install production dependencies.
 RUN apt update && apt -y install curl
