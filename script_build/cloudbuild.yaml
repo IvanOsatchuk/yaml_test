@@ -1,11 +1,5 @@
 steps:
-- id: Build Repo Image
-  name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/rapid-strength-333817/function_cicd/migration_labs:dev', '.']
-- name: 'gcr.io/rapid-strength-333817/function_cicd/migration_labs:dev'
-  id: Executing teste
-  entrypoint: 'teste'
-  args:
-    - --env=dev
-    - dataops
-timeout: 7200s
+- name: 'python'
+  args: ['pip3','install', '-r', 'requirements.txt', '--user']
+- name: 'python'
+  args: ['python3','script_build/main.py','--env=dev']
