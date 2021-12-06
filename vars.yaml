@@ -1,3 +1,7 @@
-valor1: primeira-func
-valor2: segunda-func
-valor3: terceira-func
+sensitive: True
+functions: 
+  - primeira-func
+  - segunda-func
+  - terceira-func
+  - quarta-func
+
