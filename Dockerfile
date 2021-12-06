@@ -4,8 +4,8 @@ WORKDIR /opt/pipeline/
 
 COPY requirements.txt .
 RUN pip3 install --upgrade pip && pip3 install --no-cache-dir -r requirements.txt
-COPY ./executor.py ./executor.py
-COPY ./pipeline.py ./pipeline.py
+COPY ./executor.py .
+COPY ./pipeline.py .
 COPY ./main.py ./migration-pipeline
 RUN chmod 755 migration-pipeline
 
