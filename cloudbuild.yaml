@@ -5,4 +5,9 @@ steps:
     - --destination=gcr.io/$PROJECT_ID/$REPO_NAME
     - --context=dir:///workspace/
     - --cache=true
+- name: gcr.io/$PROJECT_ID/$REPO_NAME
+  id: Executando
+  args:
+   - --env=dev
+   - datops
 
