@@ -5,7 +5,7 @@ import os
 
 def call_term(template,return_first_line=True,log_on_cbuild=True):
     print("Run command: {}".format(template))
-    process = subprocess.Popen(
+    process = subprocess.run(
         shlex.split(template), stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
     instance_output, err = process.communicate()
