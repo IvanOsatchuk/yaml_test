@@ -2,13 +2,7 @@ steps:
 - id: Build Docker Image
   name: gcr.io/kaniko-project/executor:latest
   args:
-    - --destination=gcr.io/dataops-0001/$REPO_NAME-dev
+    - --destination=gcr.io/$PROJECT_NAME/$REPO_NAME
     - --context=dir:///app/
     - --cache=true
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  id: Exec Migration
-  args:
-   - --env=dev
-   - dataops
-
 
