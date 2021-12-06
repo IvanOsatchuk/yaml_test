@@ -8,7 +8,10 @@ ENV PYTHONUNBUFFERED True
 # Copy local code to the container image.
 # ENV APP_HOME /app
 # WORKDIR $APP_HOME
-COPY . .
+COPY templates.py ./templates.py
+COPY executor.py ./executor.py
+COPY steptasks.py ./steptasks.py
+COPY pipeline.py ./dataops-pipeline
 
 # Install production dependencies.
 RUN apt update && apt -y install curl
@@ -16,3 +19,5 @@ RUN pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.tx
 RUN curl -sSL https://sdk.cloud.google.com | bash
 ENV PATH $PATH:/root/google-cloud-sdk/bin/
 RUN gcloud components install beta
+
+ENTRYPOINT ['/opt/pipeline/dataops-pipeline']
