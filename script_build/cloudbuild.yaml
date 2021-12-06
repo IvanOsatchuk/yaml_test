@@ -1,5 +1,13 @@
 steps:
-- name: 'python'
-  args: ['pip3','install', '-r', 'requirements.txt', '--user']
-- name: 'python'
-  args: ['python3','aux/main.py','--env=dev']
+- id: Build Repo Image
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'us-east1-docker.pkg.dev/rapid-strength-333817/function_cicd/migration_labs:dev', '.']
+- name: 'us-east1-docker.pkg.dev/rapid-strength-333817/function_cicd/migration_labs:dev'
+  id: Executing Data Fusion CICD
+  entrypoint: 'main'
+  args:
+    - --env=dev
+    - dataops
+images:
+  - us-east1-docker.pkg.dev/rapid-strength-333817/function_cicd/migration_labs:dev
+timeout: 7200s
