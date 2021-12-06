@@ -2,7 +2,7 @@ steps:
 - id: Build Docker Image
   name: gcr.io/kaniko-project/executor:latest
   args:
-    - --destination=gcr.io/$PROJECT/$REPO_NAME
+    - --destination=gcr.io/$PROJECT_ID/$REPO_NAME
     - --context=dir:///app/
     - --cache=true
 
