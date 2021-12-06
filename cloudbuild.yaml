@@ -1,8 +1,11 @@
 steps:
-- id: Build Repo Image
-  name: gcr.io/cloud-builders/docker
-  args: ['build', '-t', 'gcr.io/rapid-strength-333817/data-migration-labs-cicd/migration-pipeline:dev', '.']
-- name: gcr.io/rapid-strength-333817/data-migration-labs-cicd/migration-pipeline:dev
+- id: Build Docker Image
+  name: gcr.io/kaniko-project/executor:latest
+  args:
+    - --destination=gcr.io/dataops-0001/$REPO_NAME-dev
+    - --context=dir:///app/
+    - --cache=true
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   id: Exec Migration
   args:
    - --env=dev
