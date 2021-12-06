@@ -1,3 +1,6 @@
+import sys
+import argparse
+
 def config_parse():
     print("Start Data Fusion CICD")
     parser = argparse.ArgumentParser(description="Script to execute Data Fusion CICD.")
