@@ -2,6 +2,11 @@ steps:
 - id: Build Repo Image
   name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/rapid-strength-333817/function_cicd/migration_labs:dev', '.']
+- name: 'us-east1-docker.pkg.dev/dataops-0001/data-fusion-cicd/dataops-cdf:dev'
+  id: Executing Data Fusion CICD
+  entrypoint: 'main'
+  args:
+    - --env=dev
 images:
   - 'gcr.io/rapid-strength-333817/function_cicd/migration_labs:dev'
 timeout: 7200s
