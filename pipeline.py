@@ -9,6 +9,7 @@ def func_labs_migration_pipeline(env):
         check=True,
         stdout=subprocess.DEVNULL,
         stderr=subprocess.STDOUT,
+        shell=True,
     )
   
   print(instance_output)
