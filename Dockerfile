@@ -8,7 +8,6 @@ ENV PYTHONUNBUFFERED True
 # Copy local code to the container image.
 # ENV APP_HOME /app
 # WORKDIR $APP_HOME
-COPY templates.py ./templates.py
 COPY executor.py ./executor.py
 COPY steptasks.py ./steptasks.py
 COPY pipeline.py ./dataops-pipeline
