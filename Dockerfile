@@ -9,4 +9,4 @@ RUN chmod 755 /app/main.py
 
 ENV PATH=$PATH:/app/
 
-#ENTRYPOINT ["/app/main.py"]
+CMD [ "python", "./test.py"]
