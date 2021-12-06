@@ -3,8 +3,9 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/rapid-strength-333817/function_cicd/migration_labs:dev', '.']
 - name: 'gcr.io/rapid-strength-333817/function_cicd/migration_labs:dev'
-  id: Executing Data Fusion CICD
+  id: Executing teste
   entrypoint: 'teste'
   args:
     - --env=dev
+    - dataops
 timeout: 7200s
