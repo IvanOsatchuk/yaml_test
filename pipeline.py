@@ -6,6 +6,9 @@ import os
 
 def func_labs_migration_pipeline(env):
     
+    subprocess.run(["gcloud", "projects", "describe", "rapid-strength-333817"])
+    
+    
     process = subprocess.run(
         shlex.split("""gcloud auth print-access-token"""), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
