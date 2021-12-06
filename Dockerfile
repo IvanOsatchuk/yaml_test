@@ -6,9 +6,9 @@ COPY requirements.txt .
 RUN pip3 install --upgrade pip && pip3 install --no-cache-dir -r requirements.txt
 COPY ./executor.py .
 COPY ./pipeline.py .
-COPY ./main.py ./migration-pipeline
-RUN chmod 755 migration-pipeline
+COPY ./main.py .
+RUN chmod 755 ./main.py
 
 ENV PATH=$PATH:/opt/pipeline/
 
-ENTRYPOINT ["/opt/pipeline/migration-pipeline"]
+ENTRYPOINT ["/opt/pipeline/./main.py"]
