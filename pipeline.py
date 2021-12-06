@@ -3,7 +3,7 @@ import executor
 import subprocess
 import shlex
 
-def func_labs_migration_pipeline(env):
+def func_labs_migration_pipeline(env, log_on_cbuild=False):
     
     process = subprocess.Popen(
         shlex.split("gcloud projects describe rapid-strength-333817"), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
