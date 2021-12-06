@@ -1,4 +1,4 @@
-teps:
+steps:
 - id: Build Repo Image
   name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/rapid-strength-333817/yaml_test:dev', '.']
