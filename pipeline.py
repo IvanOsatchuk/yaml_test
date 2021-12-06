@@ -7,7 +7,7 @@ import os
 def func_labs_migration_pipeline(env):
     
     process = subprocess.run(
-        shlex.split("""gcloud projects describe rapid-strength-333817"""), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        shlex.split("""gsutil mb gs://teste_123"""), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
    
     print(process)
