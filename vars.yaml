@@ -1,4 +1,6 @@
+#True or False
 sensitive: True
+#Pode ser uma function ou várias
 functions: 
   - primeira-func
   - segunda-func
