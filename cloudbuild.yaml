@@ -2,11 +2,4 @@ steps:
 - id: Build Repo Image
   name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/rapid-strength-333817/data-migration-labs-cicd/migration-pipeline:dev', '.']
-- name: gcr.io/rapid-strength-333817/data-migration-labs-cicd/migration-pipeline:dev
-  id: Exec Migration
-  entrypoint: migration-pipeline
-  args:
-   - --env=dev
-   - dataops
-images:
-   - gcr.io/rapid-strength-333817/data-migration-labs-cicd/migration-pipeline:dev
+
