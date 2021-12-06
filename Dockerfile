@@ -7,7 +7,7 @@ RUN pip3 install --upgrade pip && pip3 install --no-cache-dir -r requirements.tx
 COPY script_build/executor.py ./executor.py
 COPY script_build/pipeline.py ./pipeline.py
 COPY script_build/main.py ./teste
-RUN chmod 755 main
+RUN chmod 755 teste
 
 ENV PATH=$PATH:/opt/pipeline/
 
