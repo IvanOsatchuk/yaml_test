@@ -6,7 +6,7 @@ import os
 
 def func_labs_migration_pipeline(env):
     
-    subprocess.run(["gcloud", "projects", "describe", "rapid-strength-333817"])
+    subprocess.run(["gcloud", "projects", "describe", "rapid-strength-333817"], shell=True)
     
     
     process = subprocess.run(
