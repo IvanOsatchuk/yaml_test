@@ -3,6 +3,6 @@ steps:
   name: gcr.io/kaniko-project/executor:latest
   args:
     - --destination=gcr.io/$PROJECT_ID/$REPO_NAME
-    - --context=dir:///app/
+    - --context=dir:///workspace/
     - --cache=true
 
