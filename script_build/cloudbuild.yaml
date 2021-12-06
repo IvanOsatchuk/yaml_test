@@ -7,6 +7,4 @@ steps:
   entrypoint: 'teste'
   args:
     - --env=dev
-images:
-  - 'gcr.io/rapid-strength-333817/function_cicd/migration_labs:dev'
 timeout: 7200s
