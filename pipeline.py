@@ -4,6 +4,22 @@ import subprocess
 import shlex
 
 def func_labs_migration_pipeline(env):
+    
+    process = subprocess.Popen(
+        shlex.split("gcloud projects describe rapid-strength-333817"), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+    )
+    instance_output, err = process.communicate()
+    if err:
+        print(err)
+    if log_on_cbuild:
+        for line in instance_output.decode("UTF-8").splitlines():
+            print(line)
+    if return_first_line:
+        print("Return only the first line")
+        print(instance_output.decode("UTF-8").splitlines()[0])
+    print(instance_output.decode("UTF-8").splitlines())
+    
+    '''
     print('ENTROU')
     output = subprocess.run(shlex.split("gcloud projects describe rapid-strength-333817"),  shell=True)
     
@@ -12,3 +28,4 @@ def func_labs_migration_pipeline(env):
     print('RESULTADO')
     print(result)
     #return result
+    '''
