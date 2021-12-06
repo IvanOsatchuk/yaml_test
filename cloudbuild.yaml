@@ -1,12 +1,5 @@
 steps:
-- id: Build Repo Image
-  name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/rapid-strength-333817/yaml_test:dev', '.']
-- name: 'gcr.io/rapid-strength-333817/yaml_test:dev'
-  id: Executing Data Fusion CICD
-  entrypoint: 'dataops-pipeline'
-  args:
-    - --env=dev
-    - dataops
-images:
-  - gcr.io/rapid-strength-333817/yaml_test:dev
+- name: 'python'
+  args: ['pip3','install', '-r', 'requirements.txt', '--user']
+- name: 'python'
+  args: ['python3','main.py','--env=dev']
