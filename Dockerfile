@@ -2,7 +2,7 @@ FROM gcr.io/google.com/cloudsdktool/cloud-sdk
 
 WORKDIR /opt/pipeline/
 
-COPY ./requirements.py .
+COPY requirements.py .
 RUN pip3 install --upgrade pip && pip3 install --no-cache-dir -r requirements.txt
 COPY ./executor.py ./executor.py
 COPY ./pipeline.py ./pipeline.py
