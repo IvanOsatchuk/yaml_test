@@ -30,19 +30,6 @@ steps:
          for val in $($_SENSITIVE); do
             echo $val
          done
- - id: "Read Functions"
-   name: 'gcr.io/cloud-builders/gcloud'
-   entrypoint: "bash"
-   args:
-     - "-c"
-     - |
-         echo "Segundo do processo"
-         echo $($_FUNCTIONS)
-         for val in $($_FUNCTIONS); do
-            echo $val
-         done
 substitutions:
   _SENSITIVE: "cat /workspace/is_sentive.txt"
-  _FUNCTIONS: "cat /workspace/functions.txt"
-options:
-  dynamic_substitutions: true
+  
