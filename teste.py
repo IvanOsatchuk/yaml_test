@@ -22,7 +22,9 @@ def config_parse():
         type=str,
         dest="non_sensitive_path" 
     )
-    
+    return parser
+
+
 parser = config_parse()
 args = parser.parse_args()
 print("Started args: ", args)
