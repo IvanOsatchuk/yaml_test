@@ -60,6 +60,8 @@ if __name__ == "__main__":
     rc = p.returncode
     
     print(output)
+    
+    print(output.decode("UTF-8").splitlines()[0])
         
     for func in file['Functions']:
         print(f"teste {func}")
