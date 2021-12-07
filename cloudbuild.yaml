@@ -22,8 +22,8 @@ steps:
          
          if $(cat /workspace/validate_sensitive.txt) = false;then
           echo "EEEH TRUE"
-          VPATH="ssbx-fds-prevencao-fraudes"
-          echo $VPATH
+          TESTE="ssbx-fds-prevencao-fraudes"
+          echo $TESTE
          else
           echo "noa eh"
          fi
