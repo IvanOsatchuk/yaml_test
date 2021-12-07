@@ -23,5 +23,12 @@ steps:
          for val in $($_VARSENSITIVE); do
             echo $val
          done
+         
+         echo $($_VARFUNCTIONS)
+         for val in $($_VARFUNCTIONS); do
+            echo $val
+         done
+         
 substitutions:
   _VARSENSITIVE: "cat /workspace/validate_sensitive.txt"
+  _VARFUNCTIONS: "cat /workspace/functions_name.txt"
