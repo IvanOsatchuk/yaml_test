@@ -7,7 +7,7 @@ steps:
     - |
        echo "Inicio do processo"
        output_sensitive=$(grep IsSensitive vars.yaml)
-       sensitive_value=${output_sensitive#*'IsSensitive : '}
+       sensitive_value=${output_sensitive#*'IsSensitive: '}
        echo $sensitive_value > /workspace/validate_sensitive.txt
        output_function=$(grep Functions vars.yaml)
        functions_value=${output_function#*'Functions: '}
