@@ -1,0 +1,9 @@
+{
+  "secret_project_id": "sensitive-raw",
+  "secret_id": "clearsale_sftp_credential",
+  "project_id": "sensitive-raw",
+  "raw_dataset": "raw_clearsale",
+  "raw_table": "tb_eud_score_cad_clearsale",
+  "log_tablename": "raw-zone-005.auxiliar.tb_log_carga",
+  "filepath": "Eudora_CadastroRepresentante\\EudoraCadastro_Geral_StatusDeFinalizacao.csv"    
+}

@@ -1,0 +1,8 @@
+# Function dependencies, for example:
+# package>=version
+
+pandas>=1.2.4
+pandas-gbq>=0.15.0
+google-cloud-secret-manager>=2.7.0
+paramiko>=2.7.2
+pytz>=2021.1
