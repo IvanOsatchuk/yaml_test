@@ -1,4 +1,7 @@
 import yaml
+import sys
+
+print(sys.argv)
 
 file = yaml.full_load(open('vars.yaml'))
 
