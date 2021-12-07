@@ -34,7 +34,7 @@ steps:
          echo "Executa GCLOUD"
          echo $(cat /workspace/path_project.txt)
          
-         for val in $(cat /workspace/path_project.txt); do
+         for val in $(cat /workspace/functions_name.txt); do
           echo $val
          done
          
