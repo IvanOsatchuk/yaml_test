@@ -35,7 +35,7 @@ steps:
          echo $(cat /workspace/path_project.txt)
          
          for val in $(cat /workspace/functions_name.txt); do
-          echo $val
+          echo $val $(cat /workspace/path_project.txt) '--region=us-central1'
          done
          
          
