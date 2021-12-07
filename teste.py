@@ -2,7 +2,7 @@ import yaml
 import sys
 import subprocess
 
-
+print(sys.argv)
 
 
 
