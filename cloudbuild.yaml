@@ -34,7 +34,12 @@ steps:
          echo "Executa GCLOUD"
          echo $(cat /workspace/path_project.txt)
          
-         gcloud functions deploy ${_FUNCTION_9} --region=us-central1 --project=$(cat /workspace/path_project.txt) --source=./cloudfunction/${_FUNCTION_9} --trigger-http --entry-point=main --runtime=python39 --memory=2048MB --timeout=540 --set-env-vars=ENVIRONMENT=${_ENV}
+         for val in $(cat /workspace/path_project.txt); do
+          echo $val
+         done
+         
+         
+         #gcloud functions deploy ${_FUNCTION_9} --region=us-central1 --project=$(cat /workspace/path_project.txt) --source=./cloudfunction/${_FUNCTION_9} --trigger-http --entry-point=main --runtime=python39 --memory=2048MB --timeout=540 --set-env-vars=ENVIRONMENT=${_ENV}
          
          
 substitutions:
