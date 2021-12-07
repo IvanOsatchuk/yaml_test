@@ -11,6 +11,7 @@ def validate():
         raise Exception("[ERROR] Functions fields not found")
     if file['IsSensitive'] not in [True, False]:
         raise Exception("[ERROR] IsSensitive invalid value")
+    return file 
 
 def config_parse():
     print("Start Data Fusion CICD")
