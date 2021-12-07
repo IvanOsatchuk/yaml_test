@@ -7,8 +7,8 @@ steps:
     - |
        echo "Inicio do processo"
        output=$(grep IsSentive vars.yaml)
-       IsSentive=${output#*'IsSentive: '}
-       echo $IsSentive > /workspace/IsSentive.txt
+       sensitive_value=${output#*'IsSentive:'}
+       echo $sensitive_value > /workspace/validate_sensitive.txt
  - id: "Read Values"
    name: 'gcr.io/cloud-builders/gcloud'
    entrypoint: "bash"
@@ -21,4 +21,4 @@ steps:
             echo $val
          done
 substitutions:
-  _ENV: "cat /workspace/IsSentive.txt"
+  _ENV: "cat /workspace/first.txt"
