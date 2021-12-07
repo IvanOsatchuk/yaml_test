@@ -21,7 +21,7 @@ steps:
          echo "Varifica se é sensitive"
          echo $($_VARSENSITIVE)
          
-         if [$($_VARFUNCTIONS) = True]
+         if [$($_VARFUNCTIONS) = true]
          then
           echo "EEEH TRUE"
          else
