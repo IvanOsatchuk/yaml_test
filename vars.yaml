@@ -1,3 +1,4 @@
 IsSensitive: True
 Functions: 
   - ingestao_raw-adyen_payments_accounting
+  - ingestao-raw-tb_eud_score_cad_clearsale
