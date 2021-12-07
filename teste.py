@@ -15,18 +15,11 @@ def validate(file):
 def call_gcloud(func, path_project, env, log_on_cbuild=True, return_first_line=True):
     p = Popen(f"""
               gcloud functions deploy {func} --region=us-central1 --project={path_project} --source=./cloudfunction/{func} --trigger-http --entry-point=main --runtime=python39 --memory=2048MB --timeout=540 --set-env-vars=ENVIRONMENT={env}
-              """, shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE)
-    instance_output, err = p.communicate()
-    if err:
-        print(err)
-    """
-    if log_on_cbuild:
-        for line in instance_output.decode("UTF-8").splitlines():
-            print(line)
-    if return_first_line:
-        print("Return only the first line")
-        return instance_output.decode("UTF-8").splitlines()[0]"""
-    return instance_output.decode("UTF-8").splitlines()
+              """,, shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE)
+    output, err = p.communicate(b"input data that is passed to subprocess' stdin")
+    rc = p.returncode
+    
+    print(output)
     
 
 def config_parse():
