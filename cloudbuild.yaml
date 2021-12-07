@@ -21,7 +21,7 @@ steps:
          echo "Varifica se é sensitive"
          echo $($_VARSENSITIVE)
          
-         if $_VARSENSITIVE = True
+         if [$_VARSENSITIVE = True]
          then
           echo "EEEH TRUE"
          else
