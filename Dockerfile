@@ -1,6 +1,6 @@
 FROM gcr.io/google.com/cloudsdktool/cloud-sdk
 
-WORKDIR /app/
+WORKDIR /workspace/app/
 
 COPY ./requirements.py ./requirements.py
 RUN pip3 install --upgrade pip && pip3 install --no-cache-dir -r requirements.txt
