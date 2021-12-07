@@ -23,7 +23,7 @@ steps:
          
          if (($_VARSENSITIVE -eq True))
          then
-          STATEMENTS1
+          echo "EEEH TRUE"
          else
           STATEMENTS2
          fi
