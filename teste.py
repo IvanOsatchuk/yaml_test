@@ -18,7 +18,7 @@ file = yaml.full_load(open('vars.yaml'))
 
 subprocess.call('echo ' + str(file['IsSensitive']).lower() + '> /workspace/validate_sensitive.txt', shell=True)
 
-subprocess.call('echo ' + ' '.join(file['Functions']) + '> /workspace/functions_name.txt', shell=True)
+subprocess.call('echo ' + " ".join(file['Functions']) + '> /workspace/functions_name.txt', shell=True)
     
     
 if 'IsSensitive' not in file:
