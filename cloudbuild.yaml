@@ -22,11 +22,10 @@ steps:
          
          
          
-         if [$(cat /workspace/validate_sensitive.txt) = ' False']
-         then
+         if [$(cat /workspace/validate_sensitive.txt) = "False"];then
           echo "EEEH TRUE"
          else
-          echo 'noa eh'
+          echo "noa eh"
          fi
          
          
