@@ -20,8 +20,8 @@ steps:
      - |
          echo "Varifica se é sensitive"
          
-         _VARSENSITIVE=$(cat /workspace/validate_sensitive.txt)
-         echo $_VARSENSITIVE
+         echo $(cat /workspace/validate_sensitive.txt)
+         
          
          
          
