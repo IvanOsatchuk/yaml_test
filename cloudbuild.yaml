@@ -9,16 +9,6 @@ steps:
        output=$(grep IsSentitive vars.yaml)
        IsSentitive=${output#*'IsSentitive:'}
        echo $IsSentitive > /workspace/is_sentive.txt
- - id: "Store Functions Names"
-   name: 'gcr.io/cloud-builders/gcloud'
-   entrypoint: "bash"
-   args:
-    - "-c"
-    - |
-       echo "Inicio do processo"
-       output=$(grep IsSentitive vars.yaml)
-       Functions=${output#*'Functions:'}
-       echo $Functions > /workspace/functions.txt
  - id: "Read Values"
    name: 'gcr.io/cloud-builders/gcloud'
    entrypoint: "bash"
