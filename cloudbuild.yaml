@@ -20,14 +20,13 @@ steps:
      - |
          echo "Varifica se é sensitive"
          
-         
-         
          if $(cat /workspace/validate_sensitive.txt) = false;then
           echo "EEEH TRUE"
+          _PATH="ssbx-fds-prevencao-fraudes"
+          echo $_PATH
          else
           echo "noa eh"
          fi
-         
          
          for val in $($_VARSENSITIVE); do
             echo $val
