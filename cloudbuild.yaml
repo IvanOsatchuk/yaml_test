@@ -20,6 +20,6 @@ steps:
          for val in $($_SENSITIVE); do
             echo $val
          done
-substitutions:
-  _SENSITIVE: "cat /workspace/is_sentive.txt"
+ substitutions:
+   _SENSITIVE: "cat /workspace/is_sentive.txt"
   
