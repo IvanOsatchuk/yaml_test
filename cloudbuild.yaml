@@ -1,14 +1,13 @@
-steps:
- - id: "Store Sensitve Validation"
+- id: "Store Values"
    name: 'gcr.io/cloud-builders/gcloud'
    entrypoint: "bash"
    args:
     - "-c"
     - |
        echo "Inicio do processo"
-       output=$(grep IsSentitive vars.yaml)
-       IsSentitive=${output#*'IsSentitive:'}
-       echo $IsSentitive > /workspace/is_sentive.txt
+       output=$(grep IsSentive vars.yaml)
+       valor1=${output#*'valor1='}
+       echo $valor1 > /workspace/first.txt
  - id: "Read Values"
    name: 'gcr.io/cloud-builders/gcloud'
    entrypoint: "bash"
@@ -16,10 +15,9 @@ steps:
      - "-c"
      - |
          echo "Segundo do processo"
-         echo $($_SENSITIVE)
-         for val in $($_SENSITIVE); do
+         echo $($_ENV)
+         for val in $($_ENV); do
             echo $val
          done
- substitutions:
-   _SENSITIVE: "cat /workspace/is_sentive.txt"
-  
+substitutions:
+  _ENV: "cat /workspace/first.txt"
