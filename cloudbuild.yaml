@@ -20,7 +20,7 @@ steps:
      - |
          echo "Varifica se é sensitive"
          
-         _SENSITIVE=$(cat /workspace/validate_sensitive.txt)
+         _SENSITIVE=cat /workspace/validate_sensitive.txt
          
          echo $_SENSITIVE
          
