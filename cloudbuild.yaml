@@ -40,5 +40,5 @@ steps:
 substitutions:
   _FUNCTION_9: 'ingestao_raw-adyen_payments_accounting'
   _ENV: dev
-  _SENSITIVEPATH: "ssbx-fds-prevencao-fraudes"
+  _SENSITIVEPATH: "rapid-strength-333817"
   _NONSENSITIVEPATH: "dataops-0001"
