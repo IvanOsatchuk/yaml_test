@@ -1,10 +1,31 @@
 import yaml
 import sys
 import subprocess
+import argparse
 
-print(sys.argv)
+def config_parse():
+    print("Start Data Fusion CICD")
+    parser = argparse.ArgumentParser(description="ENV vars")
 
-
+    parser.add_argument(
+        "--ENV",
+        type=str,
+        dest="env" 
+    )
+    parser.add_argument(
+        "--SENSITIVEPATH",
+        type=str,
+        dest="sensitive_path" 
+    )
+    parser.add_argument(
+        "--NONSENSITIVEPATH",
+        type=str,
+        dest="non_sensitive_path" 
+    )
+    
+parser = config_parse()
+args = parser.parse_args()
+print("Started args: ", args)
 
 file = yaml.full_load(open('vars.yaml'))
 
