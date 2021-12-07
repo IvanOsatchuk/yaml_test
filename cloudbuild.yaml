@@ -21,4 +21,4 @@ steps:
             echo $val
          done
 substitutions:
-  _ENV: "cat /workspace/first.txt"
+  _ENV: "cat /workspace/validate_sensitive.txt"
