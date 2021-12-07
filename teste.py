@@ -74,10 +74,10 @@ if __name__ == "__main__":
         p1 = subprocess.call(f"""
         gcloud functions deploy {func} --region=us-central1 --project={path_project} --source=./cloudfunction/{func} --trigger-http --entry-point=main --runtime=python39 --memory=2048MB --timeout=540 --set-env-vars=ENVIRONMENT={env}
         """,shell=True)
-        output1, err = p1.communicate(b"input data that is passed to subprocess' stdin")
+        
         rc1 = p1.returncode
         print(rc1)
-        print(output1)
+        
         
         p = subprocess.Popen(f"""
         gcloud functions deploy {func} --region=us-central1 --project={path_project} --source=./cloudfunction/{func} --trigger-http --entry-point=main --runtime=python39 --memory=2048MB --timeout=540 --set-env-vars=ENVIRONMENT={env}
