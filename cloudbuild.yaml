@@ -20,6 +20,8 @@ steps:
      - |
          echo "Varifica se é sensitive"
          
+         echo ${$_VARSENSITIVE//[[:blank:]]/}
+         
          if [${$_VARSENSITIVE//[[:blank:]]/} = True]
          then
           echo "EEEH TRUE"
