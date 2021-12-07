@@ -19,6 +19,9 @@ def call_gcloud(func, path_project, env, log_on_cbuild=True, return_first_line=T
     output, err = p.communicate(b"input data that is passed to subprocess' stdin")
     rc = p.returncode
     
+    if err:
+        print(err)
+    
     print(output)
     
 
