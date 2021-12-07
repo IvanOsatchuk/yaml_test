@@ -15,6 +15,7 @@ file = yaml.full_load(open('vars.yaml'))
 #with open('./workspace/functions_name.txt','w') as f:
 #    f.write(' '.join(file['Functions']))
 
+print(" ".join(file['Functions']))
 
 subprocess.call('echo ' + str(file['IsSensitive']).lower() + '> /workspace/validate_sensitive.txt', shell=True)
 
