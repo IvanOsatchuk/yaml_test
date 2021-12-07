@@ -3,7 +3,9 @@ steps:
    args: ['pip3','install', '-r', 'requirements.txt', '--user']
  - name: 'python'
    args: ['python3','teste.py','--ENV=$_ENV','--SENSITIVEPATH=$_SENSITIVEPATH', '--NONSENSITIVEPATH=$_NONSENSITIVEPATH']
- 
+ - name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args: ['workspace/run.sh']
          
 substitutions:
   _ENV: dev
