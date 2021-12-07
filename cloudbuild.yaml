@@ -26,7 +26,7 @@ steps:
          
          echo $($_VARFUNCTIONS)
          for val in $($_VARFUNCTIONS); do
-            echo ${val#*','}
+            echo ${val#*', '}
          done
          
 substitutions:
