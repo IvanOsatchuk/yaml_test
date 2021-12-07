@@ -19,9 +19,9 @@ steps:
      - "-c"
      - |
          echo "Segundo do processo"
-         echo $($_ENV)
-         for val in $($_ENV); do
+         echo $($_VARSENSITIVE)
+         for val in $($_VARSENSITIVE); do
             echo $val
          done
 substitutions:
-  _ENV: "cat /workspace/validate_sensitive.txt"
+  _VARSENSITIVE: "cat /workspace/validate_sensitive.txt"
