@@ -1,14 +1,14 @@
 FROM gcr.io/google.com/cloudsdktool/cloud-sdk
 
-WORKDIR /workspace/app/
+WORKDIR /opt/pipeline/
 
-COPY requirements.py ./requirements.py
+COPY requirements.py .
 RUN pip3 install --upgrade pip && pip3 install --no-cache-dir -r requirements.txt
 COPY ./executor.py ./executor.py
 COPY ./pipeline.py ./pipeline.py
 COPY ./main.py ./main
 RUN chmod 755 main
 
-ENV PATH=$PATH:/app/
+ENV PATH=$PATH:/opt/pipeline/
 
-ENTRYPOINT ["/app/main"]
+ENTRYPOINT ["/opt/pipeline/main"]
