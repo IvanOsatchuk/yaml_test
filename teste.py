@@ -29,20 +29,28 @@ parser = config_parse()
 args = parser.parse_args()
 print("Started args: ", args)
 
+env = args.env
+sensitive_path = args.sensitive_path
+non_sensitive_path = args.non_sensitive_path
+path_project = ''
+
 file = yaml.full_load(open('vars.yaml'))
 
+if file['IsSensitive'] == True:
+    path_project = sensitive_path
+else:
+    path_project = non_sensitive_path
+    
 
-#with open('./workspace/validate_sensitive.txt','w') as f:
-#    f.write(str(file['IsSensitive']).lower())
+for func in file['Functions']:
+    subprocess.call(f"echo gcloud functions deploy $func --region=us-central1 --project={path_project} --source=./cloudfunction/{func} --trigger-http --entry-point=main --runtime=python39 --memory=2048MB --timeout=540 --set-env-vars=ENVIRONMENT=${env}", shell=True)
 
-#with open('./workspace/functions_name.txt','w') as f:
-#    f.write(' '.join(file['Functions']))
 
-print(" ".join(file['Functions']))
+#print(" ".join(file['Functions']))
 
-subprocess.call('echo ' + str(file['IsSensitive']).lower() + '> /workspace/validate_sensitive.txt', shell=True)
+#subprocess.call('echo ' + str(file['IsSensitive']).lower() + '> /workspace/validate_sensitive.txt', shell=True)
 
-subprocess.call('echo ' + "".join(file['Functions']) + '> /workspace/functions_name.txt', shell=True)
+#subprocess.call('echo ' + "".join(file['Functions']) + '> /workspace/functions_name.txt', shell=True)
     
     
 if 'IsSensitive' not in file:
