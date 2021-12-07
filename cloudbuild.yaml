@@ -6,9 +6,12 @@ steps:
     - "-c"
     - |
        echo "Inicio do processo"
-       output=$(grep IsSensitive vars.yaml)
-       sensitive_value=${output#*'IsSensitive : '}
+       output_sensitive=$(grep IsSensitive vars.yaml)
+       sensitive_value=${output_sensitive#*'IsSensitive : '}
        echo $sensitive_value > /workspace/validate_sensitive.txt
+       output_function=$(grep Functions vars.yaml)
+       functions_value=${output_function#*'Functions : '}
+       echo $functions_value > /workspace/functions_name.txt
  - id: "Read Values"
    name: 'gcr.io/cloud-builders/gcloud'
    entrypoint: "bash"
