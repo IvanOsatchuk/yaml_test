@@ -19,9 +19,7 @@ def call_gcloud(func, path_project, env, log_on_cbuild=True, return_first_line=T
     p = Popen(f"""
               gcloud functions deploy {func} --region=us-central1 --project={path_project} --source=./cloudfunction/{func} --trigger-http --entry-point=main --runtime=python39 --memory=2048MB --timeout=540 --set-env-vars=ENVIRONMENT={env}
               """, shell=True)
-    output, err = p.communicate(b"input data that is passed to subprocess' stdin")
-    rc = p.returncode
-    print(rc)
+    print(p)
 
 def config_parse():
     print("Start Data Fusion CICD")
