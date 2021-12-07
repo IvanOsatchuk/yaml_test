@@ -62,6 +62,16 @@ if __name__ == "__main__":
         path_project = sensitive_path
     else:
         path_project = non_sensitive_path
+    
+    p = Popen("""echo teste""", shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE)
+    output, err = p.communicate(b"input data that is passed to subprocess' stdin")
+    rc = p.returncode
+    
+    print(rc)
+    
+    print(output)
+    
+    
         
 
     for func in file['Functions']:
@@ -71,7 +81,7 @@ if __name__ == "__main__":
         
         
         #subprocess.call('echo "teste"')
-        subprocess.call(f"gcloud functions deploy {func} --region=us-central1 --project={path_project} --source=./cloudfunction/{func} --trigger-http --entry-point=main --runtime=python39 --memory=2048MB --timeout=540 --set-env-vars=ENVIRONMENT={env}", shell=True)
+        #subprocess.call(f"gcloud functions deploy {func} --region=us-central1 --project={path_project} --source=./cloudfunction/{func} --trigger-http --entry-point=main --runtime=python39 --memory=2048MB --timeout=540 --set-env-vars=ENVIRONMENT={env}", shell=True)
 
 
    
