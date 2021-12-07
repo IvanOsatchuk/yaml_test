@@ -75,8 +75,6 @@ if __name__ == "__main__":
         gcloud functions deploy {func} --region=us-central1 --project={path_project} --source=./cloudfunction/{func} --trigger-http --entry-point=main --runtime=python39 --memory=2048MB --timeout=540 --set-env-vars=ENVIRONMENT={env}
         """,shell=True)
         
-        rc1 = p1.returncode
-        print(rc1)
         
         
         p = subprocess.Popen(f"""
