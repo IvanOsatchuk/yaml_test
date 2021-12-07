@@ -6,7 +6,7 @@ steps:
     - "-c"
     - |
        echo "Inicio do processo"
-       output=$(grep IsSentive vars.yaml)
+       output=$(grep IsSensitive vars.yaml)
        sensitive_value=${output#*'IsSentive: '}
        echo $sensitive_value > /workspace/validate_sensitive.txt
  - id: "Read Values"
