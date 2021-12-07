@@ -1,4 +1,5 @@
-- id: "Store Values"
+steps:
+ - id: "Store Values"
    name: 'gcr.io/cloud-builders/gcloud'
    entrypoint: "bash"
    args:
