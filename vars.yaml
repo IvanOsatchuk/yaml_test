@@ -1,5 +1,3 @@
 IsSensitive: True
 Functions: 
-  - func1 
-  - func2 
-  - func3
+  - ingestao_raw-adyen_payments_accounting
