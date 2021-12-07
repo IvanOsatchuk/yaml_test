@@ -12,35 +12,29 @@ steps:
        output_function=$(grep Functions vars.yaml)
        functions_value=${output_function#*'Functions: '}
        echo $functions_value > /workspace/functions_name.txt
- - id: "Read Values"
+ - id: "Get Is Sensitive"
    name: 'gcr.io/cloud-builders/gcloud'
    entrypoint: "bash"
    args:
      - "-c"
      - |
          echo "Varifica se é sensitive"
-         
          if $(cat /workspace/validate_sensitive.txt) = false;then
           echo "EEEH TRUE"
-        
-          echo $_SENSITIVEPATH
-        
-          
+          echo $_SENSITIVEPATH > /workspace/path_project.txt
          else
-          echo "noa eh"
+          echo $_NONSENSITIVEPATH > /workspace/path_project.txt
          fi
+  - id: "Execute Gcloud"
+   name: 'gcr.io/cloud-builders/gcloud'
+   entrypoint: "bash"
+   args:
+     - "-c"
+     - |
+         echo "Executa GCLOUD"
+         echo $(cat /workspace/path_project.txt)
          
-         for val in $($_VARSENSITIVE); do
-            echo $val
-         done
-         
-         echo $($_VARFUNCTIONS)
-         for val in $($_VARFUNCTIONS); do
-            echo $val
-         done
          
 substitutions:
-  _VARSENSITIVE: "cat /workspace/validate_sensitive.txt"
-  _VARFUNCTIONS: "cat /workspace/functions_name.txt"
   _SENSITIVEPATH: "ssbx-fds-prevencao-fraudes"
   _NONSENSITIVEPATH: "dataops-0001"
