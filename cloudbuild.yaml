@@ -2,7 +2,7 @@ steps:
  - name: 'python'
    args: ['pip3','install', '-r', 'requirements.txt', '--user']
  - name: 'python'
-   args: ['python3','teste.py','--env=dev','--arg1=$_SENSITIVEPATH']
+   args: ['python3','teste.py','--env=dev','--SENSITIVEPATH=$_SENSITIVEPATH', '--NONSENSITIVEPATH=$_NONSENSITIVEPATH']
  - id: "Get Is Sensitive"
    name: 'gcr.io/cloud-builders/gcloud'
    entrypoint: "bash"
