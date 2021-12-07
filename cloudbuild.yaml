@@ -1,17 +1,8 @@
 steps:
- - id: "Store Values"
-   name: 'gcr.io/cloud-builders/gcloud'
-   entrypoint: "bash"
-   args:
-    - "-c"
-    - |
-       echo "Inicio do processo"
-       output_sensitive=$(grep IsSensitive vars.yaml)
-       sensitive_value=${output_sensitive#*'IsSensitive: '}
-       echo $sensitive_value > /workspace/validate_sensitive.txt
-       output_function=$(grep Functions vars.yaml)
-       functions_value=${output_function#*'Functions: '}
-       echo $functions_value > /workspace/functions_name.txt
+ - name: 'python'
+   args: ['pip3','install', '-r', 'requirements.txt', '--user']
+ - name: 'python'
+   args: ['python3','teste.py','--env=dev']
  - id: "Get Is Sensitive"
    name: 'gcr.io/cloud-builders/gcloud'
    entrypoint: "bash"
