@@ -3,39 +3,9 @@ steps:
    args: ['pip3','install', '-r', 'requirements.txt', '--user']
  - name: 'python'
    args: ['python3','teste.py','--ENV=$_ENV','--SENSITIVEPATH=$_SENSITIVEPATH', '--NONSENSITIVEPATH=$_NONSENSITIVEPATH']
- - id: "Get Is Sensitive"
-   name: 'gcr.io/cloud-builders/gcloud'
-   entrypoint: "bash"
-   args:
-     - "-c"
-     - |
-         echo "Varifica se é sensitive"
-         echo $(cat /workspace/functions_name.txt)
-         if $(cat /workspace/validate_sensitive.txt) = false;then
-          echo "EEEH TRUE"
-          echo $_SENSITIVEPATH > /workspace/path_project.txt
-         else
-          echo $_NONSENSITIVEPATH > /workspace/path_project.txt
-         fi
- - id: "Execute Gcloud"
-   name: 'gcr.io/cloud-builders/gcloud'
-   entrypoint: "bash"
-   args:
-     - "-c"
-     - |
-         echo "Executa GCLOUD"
-         echo $(cat /workspace/path_project.txt)
-         
-         for val in $(cat /workspace/functions_name.txt); do
-          echo $val $(cat /workspace/path_project.txt) '--region=us-central1'
-         done
-         
-         
-         #gcloud functions deploy ${_FUNCTION_9} --region=us-central1 --project=$(cat /workspace/path_project.txt) --source=./cloudfunction/${_FUNCTION_9} --trigger-http --entry-point=main --runtime=python39 --memory=2048MB --timeout=540 --set-env-vars=ENVIRONMENT=${_ENV}
-         
+ 
          
 substitutions:
-  _FUNCTION_9: 'ingestao_raw-adyen_payments_accounting'
   _ENV: dev
   _SENSITIVEPATH: "rapid-strength-333817"
   _NONSENSITIVEPATH: "dataops-0001"
