@@ -7,7 +7,7 @@ steps:
     - |
        echo "Inicio do processo"
        output=$(grep IsSentitive vars.yaml)
-       valor1=${output#*'valor1='}
+       valor1=${output#*'IsSentitive:'}
        echo $valor1 > /workspace/first.txt
  - id: "Read Values"
    name: 'gcr.io/cloud-builders/gcloud'
