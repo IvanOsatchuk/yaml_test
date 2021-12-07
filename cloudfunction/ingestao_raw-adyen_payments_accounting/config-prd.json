@@ -1,0 +1,9 @@
+{
+  "secret_project_id": "sensitive-raw",
+  "secret_id": "adyen_api_credential",
+  "project_id": "sensitive-raw",  
+  "raw_dataset":"raw_adyen",
+  "raw_table":"adyen_payment_accounting",
+  "log_tablename": "raw-zone-005.auxiliar.tb_log_carga",
+  "url":"https://ca-live.adyen.com/reports/download/MerchantAccount/{}/payments_accounting_report_{}.csv"
+}

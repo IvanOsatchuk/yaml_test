@@ -1,0 +1,9 @@
+{
+  "secret_project_id":"ssbx-fds-prevencao-fraudes",
+  "secret_id": "adyen_api_credential",
+  "project_id": "ssbx-fds-prevencao-fraudes", 
+  "raw_dataset":"raw_adyen",
+  "raw_table":"adyen_payment_accounting",
+  "log_tablename": "ssbx-fds-prevencao-fraudes.auxiliar.tb_log_carga",
+  "url":"https://ca-live.adyen.com/reports/download/MerchantAccount/{}/payments_accounting_report_{}.csv"
+}
