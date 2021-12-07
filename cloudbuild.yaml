@@ -1,5 +1,5 @@
 steps:
- - id: "Store Values"
+ - id: "Store Sensitve Validation"
    name: 'gcr.io/cloud-builders/gcloud'
    entrypoint: "bash"
    args:
@@ -7,8 +7,18 @@ steps:
     - |
        echo "Inicio do processo"
        output=$(grep IsSentitive vars.yaml)
-       valor1=${output#*'IsSentitive:'}
-       echo $valor1 > /workspace/first.txt
+       IsSentitive=${output#*'IsSentitive:'}
+       echo $IsSentitive > /workspace/is_sentive.txt
+ - id: "Store Functions Names"
+   name: 'gcr.io/cloud-builders/gcloud'
+   entrypoint: "bash"
+   args:
+    - "-c"
+    - |
+       echo "Inicio do processo"
+       output=$(grep IsSentitive vars.yaml)
+       Functions=${output#*'Functions:'}
+       echo $Functions > /workspace/functions.txt
  - id: "Read Values"
    name: 'gcr.io/cloud-builders/gcloud'
    entrypoint: "bash"
@@ -16,9 +26,21 @@ steps:
      - "-c"
      - |
          echo "Segundo do processo"
-         echo $($_ENV)
-         for val in $($_ENV); do
+         echo $($_SENSITIVE)
+         for val in $($_SENSITIVE); do
+            echo $val
+         done
+ - id: "Read Functions"
+   name: 'gcr.io/cloud-builders/gcloud'
+   entrypoint: "bash"
+   args:
+     - "-c"
+     - |
+         echo "Segundo do processo"
+         echo $($_FUNCTIONS)
+         for val in $($_FUNCTIONS); do
             echo $val
          done
 substitutions:
-  _ENV: "cat /workspace/first.txt"
+  _SENSITIVE: "cat /workspace/is_sentive.txt"
+  _FUNCTIONS: "cat /workspace/functions.txt"
