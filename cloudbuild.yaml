@@ -16,9 +16,9 @@ steps:
      - "-c"
      - |
          echo "Segundo do processo"
-         echo $($_IsSentive)
-         for val in $($_IsSentive); do
+         echo $($_ENV)
+         for val in $($_ENV); do
             echo $val
          done
 substitutions:
-  _IsSentive: "cat /workspace/IsSentive.txt"
+  _ENV: "cat /workspace/IsSentive.txt"
