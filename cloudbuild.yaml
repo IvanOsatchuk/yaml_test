@@ -23,7 +23,7 @@ steps:
          if $(cat /workspace/validate_sensitive.txt) = false;then
           echo "EEEH TRUE"
         
-          _VAR_PATH=$(_SENSITIVEPATH)
+          _VAR_PATH=_SENSITIVEPATH
         
           echo $_VAR_PATH
          else
