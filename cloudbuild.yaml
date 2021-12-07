@@ -25,7 +25,7 @@ steps:
          then
           echo "EEEH TRUE"
          else
-          STATEMENTS2
+          echo 'noa eh'
          fi
          
          for val in $($_VARSENSITIVE); do
