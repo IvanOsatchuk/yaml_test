@@ -3,15 +3,14 @@ import sys
 import subprocess
 import argparse
 
-def validate():
-    file = yaml.full_load(open('vars.yaml'))
+def validate(file):
     if 'IsSensitive' not in file:
         raise Exception("[ERROR] IsSensitive fields not found")
     if 'Functions' not in file:
         raise Exception("[ERROR] Functions fields not found")
     if file['IsSensitive'] not in [True, False]:
         raise Exception("[ERROR] IsSensitive invalid value")
-    return file 
+    
 
 def config_parse():
     print("Start Data Fusion CICD")
@@ -36,7 +35,9 @@ def config_parse():
 
 if __name__ == "__main__":
     
-    validate()
+    file = yaml.full_load(open('vars.yaml'))
+    
+    validate(file)
 
     parser = config_parse()
     args = parser.parse_args()
