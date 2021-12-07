@@ -7,7 +7,7 @@ steps:
     - |
        echo "Inicio do processo"
        output=$(grep IsSensitive vars.yaml)
-       sensitive_value=${output#*'IsSentive: '}
+       sensitive_value=${output#*'IsSensitive : '}
        echo $sensitive_value > /workspace/validate_sensitive.txt
  - id: "Read Values"
    name: 'gcr.io/cloud-builders/gcloud'
