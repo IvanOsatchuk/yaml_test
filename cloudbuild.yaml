@@ -20,9 +20,14 @@ steps:
      - |
          echo "Varifica se é sensitive"
          
-         _SENSITIVE=cat /workspace/validate_sensitive.txt
          
-         echo $_SENSITIVE
+         
+         if [$(cat /workspace/validate_sensitive.txt) = False]
+         then
+          echo "EEEH TRUE"
+         else
+          echo 'noa eh'
+         fi
          
          
          for val in $($_VARSENSITIVE); do
