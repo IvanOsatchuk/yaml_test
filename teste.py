@@ -59,7 +59,7 @@ if __name__ == "__main__":
     output, err = p.communicate(b"input data that is passed to subprocess' stdin")
     rc = p.returncode
     
-    print(rc)
+    print(output)
         
     for func in file['Functions']:
         print(f"teste {func}")
