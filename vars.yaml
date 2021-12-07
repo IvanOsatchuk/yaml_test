@@ -1,2 +1,5 @@
-IsSensitive: true
-Functions: func1 func2 func3
+IsSensitive: True
+Functions: 
+  - func1 
+  - func2 
+  - func3
