@@ -21,7 +21,7 @@ steps:
          echo "Varifica se é sensitive"
          echo $($_VARSENSITIVE)
          
-         if [$($_VARFUNCTIONS) = true]
+         if [${$($_VARSENSITIVE)//[[:blank:]]/} = True]
          then
           echo "EEEH TRUE"
          else
