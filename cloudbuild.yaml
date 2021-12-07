@@ -18,8 +18,16 @@ steps:
    args:
      - "-c"
      - |
-         echo "Segundo do processo"
+         echo "Varifica se é sensitive"
          echo $($_VARSENSITIVE)
+         
+         if (($_VARSENSITIVE -eq True))
+         then
+          STATEMENTS1
+         else
+          STATEMENTS2
+         fi
+         
          for val in $($_VARSENSITIVE); do
             echo $val
          done
@@ -32,3 +40,5 @@ steps:
 substitutions:
   _VARSENSITIVE: "cat /workspace/validate_sensitive.txt"
   _VARFUNCTIONS: "cat /workspace/functions_name.txt"
+  _SENSITIVEPATH: "ssbx-fds-prevencao-fraudes"
+  _NONSENSITIVEPATH: "dataops-0001"
