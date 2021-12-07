@@ -7,7 +7,4 @@ steps:
     - --cache=true
 - name: gcr.io/$PROJECT_ID/$REPO_NAME
   id: Executando
-  args:
-   - --env=dev
-   - datops
 
