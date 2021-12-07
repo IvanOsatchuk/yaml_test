@@ -21,7 +21,7 @@ def call_gcloud(func, path_project, env, log_on_cbuild=True, return_first_line=T
         print(err)
     if log_on_cbuild:
         for line in instance_output.decode("UTF-8").splitlines():
-        print(line)
+            print(line)
     if return_first_line:
         print("Return only the first line")
         return instance_output.decode("UTF-8").splitlines()[0]
