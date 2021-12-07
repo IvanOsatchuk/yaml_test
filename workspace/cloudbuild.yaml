@@ -1,0 +1,12 @@
+steps:
+- id: Build Docker Image
+  name: gcr.io/kaniko-project/executor:latest
+  args:
+    - --destination=gcr.io/$PROJECT_ID/$REPO_NAME
+    - --context=dir:///workspace/
+    - --cache=true
+- name: gcr.io/$PROJECT_ID/$REPO_NAME
+  id: Executando
+  entrypoint: 'main'
+  args:
+   - dataops
