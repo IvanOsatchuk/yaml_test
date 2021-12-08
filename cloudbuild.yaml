@@ -4,7 +4,7 @@ steps:
  - name: 'python'
    args: ['python3','teste.py','--ENV=$_ENV','--SENSITIVEPATH=$_SENSITIVEPATH', '--NONSENSITIVEPATH=$_NONSENSITIVEPATH']
  - name: 'ubuntu'
-   args: ['bash', '-c', 'echo teste $($_TESTE_VAR)']
+   args: ['bash', '-c', 'echo teste $$_TESTE_VAR']
          
 substitutions:
   _ENV: dev
