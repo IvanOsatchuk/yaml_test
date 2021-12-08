@@ -3,6 +3,7 @@ import sys
 import subprocess
 from subprocess import Popen, PIPE
 import argparse
+import os
 
 def validate(file):
     if 'IsSensitive' not in file:
