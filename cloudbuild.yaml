@@ -5,7 +5,7 @@ steps:
    args: ['python3','teste.py','--ENV=$_ENV','--SENSITIVEPATH=$_SENSITIVEPATH', '--NONSENSITIVEPATH=$_NONSENSITIVEPATH']
  - name: 'gcr.io/cloud-builders/gcloud'
    entrypoint: 'bash'
-   args: ['echo','$_TESTE_VAR']
+   args: ['echo','$($_TESTE_VAR)']
          
 substitutions:
   _ENV: dev
