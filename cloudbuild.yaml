@@ -3,8 +3,8 @@ steps:
    args: ['pip3','install', '-r', 'requirements.txt', '--user']
  - name: 'python'
    args: ['python3','teste.py','--ENV=$_ENV','--SENSITIVEPATH=$_SENSITIVEPATH', '--NONSENSITIVEPATH=$_NONSENSITIVEPATH']
- - - name: 'ubuntu'
-  args: ['bash', '-c', 'echo $$_TESTE_VAR']
+ - name: 'ubuntu'
+   args: ['bash', '-c', 'echo $$_TESTE_VAR']
          
 substitutions:
   _ENV: dev
