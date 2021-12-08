@@ -82,7 +82,8 @@ if __name__ == "__main__":
         #subprocess.call('echo "teste"')
         #subprocess.call(f"gcloud functions deploy {func} --region=us-central1 --project={path_project} --source=./cloudfunction/{func} --trigger-http --entry-point=main --runtime=python39 --memory=2048MB --timeout=540 --set-env-vars=ENVIRONMENT={env}", shell=True)
 
-    os.environ["_TESTE_VAR"] = "entrou na variável"
+    subprocess.call(f"""echo $$_TESTE_VAR={cmd} """,shell=True)
+    #os.environ["_TESTE_VAR"] = "entrou na variável"
    
 
     
